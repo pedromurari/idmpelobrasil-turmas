@@ -49,29 +49,12 @@ export type Turma = {
 // linkInscricao segue o padrao de dominio "[cidade].idmpelobrasil.com.br" (confirmar antes de publicar).
 export const turmas: Turma[] = [
   {
-    id: "curitiba-15",
-    programa: PROGRAMAS.npa,
-    cidade: "Curitiba",
-    estado: "PR",
-    numero: "#15",
-    data: "18 de Julho",
-    diaSemana: "Sabado",
-    endereco: "R. Vereador Washington Luiz, 509 - Jardim Social, Curitiba - PR",
-    preco: "R$20",
-    turnos: [
-      { label: "Manha", horario: "09h as 13h", esgotada: false },
-      { label: "Tarde", horario: "14h as 18h", esgotada: false },
-    ],
-    linkInscricao: "https://curitiba.idmpelobrasil.com.br",
-    status: "abertas",
-  },
-  {
     id: "campinas-17",
     programa: PROGRAMAS.npa,
     cidade: "Campinas",
     estado: "SP",
     numero: "#17",
-    data: "25 de Julho",
+    data: "01 de Agosto",
     diaSemana: "Sabado",
     endereco: "Coworking 949 - Rua General Osorio, 2239, Campinas - SP",
     preco: "R$20",
