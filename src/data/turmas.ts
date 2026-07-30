@@ -65,4 +65,21 @@ export const turmas: Turma[] = [
     linkInscricao: "https://campinas.idmpelobrasil.com.br",
     status: "abertas",
   },
+  {
+    id: "campinas-psi-01",
+    programa: PROGRAMAS.psi,
+    cidade: "Campinas",
+    estado: "SP",
+    numero: "#1",
+    data: "05 de Setembro",
+    diaSemana: "Sabado",
+    endereco: "Coworking 949 - Rua General Osorio, 2239, Campinas - SP",
+    preco: "R$37,90",
+    turnos: [
+      { label: "Imersao", horario: "09h as 17h", esgotada: false },
+    ],
+    // TODO: dominio ainda nao configurado - ajustar quando o deploy existir.
+    linkInscricao: "https://psicampinas.idmpelobrasil.com.br",
+    status: "em-breve",
+  },
 ];
