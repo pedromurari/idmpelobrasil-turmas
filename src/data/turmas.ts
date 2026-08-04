@@ -82,4 +82,21 @@ export const turmas: Turma[] = [
     linkInscricao: "https://psicampinas.idmpelobrasil.com.br",
     status: "em-breve",
   },
+  {
+    id: "sao-paulo-18",
+    programa: PROGRAMAS.npa,
+    cidade: "Sao Paulo",
+    estado: "SP",
+    numero: "#18",
+    data: "15 de Agosto",
+    diaSemana: "Sabado",
+    endereco: "Rua Oscar Freire, 2617 cj 408 - Pinheiros, Sao Paulo - SP",
+    preco: "R$20",
+    turnos: [
+      { label: "Manha", horario: "09h as 13h", esgotada: false },
+      { label: "Tarde", horario: "14h as 18h", esgotada: false },
+    ],
+    linkInscricao: "https://saopaulo.idmpelobrasil.com.br",
+    status: "abertas",
+  },
 ];
