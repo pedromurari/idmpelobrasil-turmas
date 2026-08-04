@@ -49,23 +49,6 @@ export type Turma = {
 // linkInscricao segue o padrao de dominio "[cidade].idmpelobrasil.com.br" (confirmar antes de publicar).
 export const turmas: Turma[] = [
   {
-    id: "campinas-17",
-    programa: PROGRAMAS.npa,
-    cidade: "Campinas",
-    estado: "SP",
-    numero: "#17",
-    data: "01 de Agosto",
-    diaSemana: "Sabado",
-    endereco: "Coworking 949 - Rua General Osorio, 2239, Campinas - SP",
-    preco: "R$20",
-    turnos: [
-      { label: "Manha", horario: "09h as 13h", esgotada: false },
-      { label: "Tarde", horario: "14h as 18h", esgotada: false },
-    ],
-    linkInscricao: "https://campinas.idmpelobrasil.com.br",
-    status: "abertas",
-  },
-  {
     id: "campinas-psi-01",
     programa: PROGRAMAS.psi,
     cidade: "Campinas",
@@ -98,5 +81,24 @@ export const turmas: Turma[] = [
     ],
     linkInscricao: "https://saopaulo.idmpelobrasil.com.br",
     status: "abertas",
+  },
+  {
+    id: "santos-20",
+    programa: PROGRAMAS.npa,
+    cidade: "Santos",
+    estado: "SP",
+    numero: "#20",
+    data: "29 de Agosto",
+    diaSemana: "Sabado",
+    endereco: "Av. D. Ana Costa, 61 - Gonzaga, Santos",
+    preco: "R$20",
+    turnos: [
+      { label: "Manha", horario: "09h as 13h", esgotada: false },
+      { label: "Tarde", horario: "14h as 18h", esgotada: false },
+    ],
+    // TODO: repo/deploy novo ainda nao existe - o #14 e #16 antigos estao desatualizados
+    // (data de 06/06), precisa de estrutura nova antes de publicar o link real.
+    linkInscricao: "https://santos.idmpelobrasil.com.br",
+    status: "em-breve",
   },
 ];
