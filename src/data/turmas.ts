@@ -49,11 +49,11 @@ export type Turma = {
 // linkInscricao segue o padrao de dominio "[cidade].idmpelobrasil.com.br" (confirmar antes de publicar).
 export const turmas: Turma[] = [
   {
-    id: "campinas-psi-01",
+    id: "campinas-psi-20",
     programa: PROGRAMAS.psi,
     cidade: "Campinas",
     estado: "SP",
-    numero: "#1",
+    numero: "#20",
     data: "05 de Setembro",
     diaSemana: "Sabado",
     endereco: "Coworking 949 - Rua General Osorio, 2239, Campinas - SP",
@@ -83,11 +83,11 @@ export const turmas: Turma[] = [
     status: "abertas",
   },
   {
-    id: "santos-20",
+    id: "santos-19",
     programa: PROGRAMAS.npa,
     cidade: "Santos",
     estado: "SP",
-    numero: "#20",
+    numero: "#19",
     data: "29 de Agosto",
     diaSemana: "Sabado",
     endereco: "Av. D. Ana Costa, 61 - Gonzaga, Santos",
