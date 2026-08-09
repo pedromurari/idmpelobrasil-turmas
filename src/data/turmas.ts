@@ -66,23 +66,6 @@ export const turmas: Turma[] = [
     status: "em-breve",
   },
   {
-    id: "sao-paulo-18",
-    programa: PROGRAMAS.npa,
-    cidade: "Sao Paulo",
-    estado: "SP",
-    numero: "#18",
-    data: "15 de Agosto",
-    diaSemana: "Sabado",
-    endereco: "Rua Oscar Freire, 2617 cj 408 - Pinheiros, Sao Paulo - SP",
-    preco: "R$20",
-    turnos: [
-      { label: "Manha", horario: "09h as 13h", esgotada: false },
-      { label: "Tarde", horario: "14h as 18h", esgotada: false },
-    ],
-    linkInscricao: "https://saopaulo.idmpelobrasil.com.br",
-    status: "abertas",
-  },
-  {
     id: "santos-19",
     programa: PROGRAMAS.npa,
     cidade: "Santos",
@@ -96,8 +79,6 @@ export const turmas: Turma[] = [
       { label: "Manha", horario: "09h as 13h", esgotada: false },
       { label: "Tarde", horario: "14h as 18h", esgotada: false },
     ],
-    // TODO: repo/deploy novo ainda nao existe - o #14 e #16 antigos estao desatualizados
-    // (data de 06/06), precisa de estrutura nova antes de publicar o link real.
     linkInscricao: "https://santos.idmpelobrasil.com.br",
     status: "em-breve",
   },
