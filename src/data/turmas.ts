@@ -73,7 +73,7 @@ export const turmas: Turma[] = [
     numero: "#19",
     data: "29 de Agosto",
     diaSemana: "Sabado",
-    endereco: "Av. D. Ana Costa, 61 - Gonzaga, Santos",
+    endereco: "Av. Anna Costa, 61 - Vila Mathias, Santos",
     preco: "R$20",
     turnos: [
       { label: "Manha", horario: "09h as 13h", esgotada: false },
