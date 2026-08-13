@@ -63,7 +63,7 @@ export const turmas: Turma[] = [
     ],
     // TODO: dominio ainda nao configurado - ajustar quando o deploy existir.
     linkInscricao: "https://psicampinas.idmpelobrasil.com.br",
-    status: "em-breve",
+    status: "esgotada",
   },
   {
     id: "santos-19",
@@ -80,6 +80,6 @@ export const turmas: Turma[] = [
       { label: "Tarde", horario: "14h as 18h", esgotada: false },
     ],
     linkInscricao: "https://santos.idmpelobrasil.com.br",
-    status: "em-breve",
+    status: "esgotada",
   },
 ];
