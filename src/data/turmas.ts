@@ -26,7 +26,7 @@ export const PROGRAMAS: Record<string, Programa> = {
   psi: {
     sigla: "PSI",
     nome: "Psicanalise Integrativa",
-    formato: "Presencial - 4h",
+    formato: "Presencial - 8h",
   },
 };
 
