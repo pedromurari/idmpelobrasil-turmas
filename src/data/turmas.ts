@@ -72,7 +72,7 @@ export const turmas: Turma[] = [
     numero: "#21",
     data: "26 de Setembro",
     diaSemana: "Sabado",
-    endereco: "Co-necta Espaco de Coworking - Praca Chui, 35 - Vila Ema, Sao Jose dos Campos - SP",
+    endereco: "R. Maj. Antonio Domingues, 84 - Centro, Sao Jose dos Campos - SP",
     preco: "R$20",
     turnos: [
       { label: "Manha", horario: "09h as 13h", esgotada: false },
