@@ -96,6 +96,6 @@ export const turmas: Turma[] = [
       { label: "Tarde", horario: "14h as 18h", esgotada: true },
     ],
     linkInscricao: "https://nparj.idmpelobrasil.com.br",
-    status: "em-breve",
+    status: "abertas",
   },
 ];
