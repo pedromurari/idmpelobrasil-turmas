@@ -62,10 +62,16 @@ const Index = () => {
                   className={
                     turma.status === "abertas"
                       ? "bg-primary text-primary-foreground shrink-0"
+                      : turma.status === "em-breve"
+                      ? "bg-amber-100 text-amber-700 shrink-0"
                       : "bg-muted text-muted-foreground shrink-0"
                   }
                 >
-                  {turma.status === "abertas" ? "Vagas abertas" : "Esgotada"}
+                  {turma.status === "abertas"
+                    ? "Vagas abertas"
+                    : turma.status === "em-breve"
+                    ? "Em breve"
+                    : "Esgotada"}
                 </Badge>
               </div>
 

@@ -81,4 +81,21 @@ export const turmas: Turma[] = [
     linkInscricao: "https://sjc.idmpelobrasil.com.br",
     status: "abertas",
   },
+  {
+    id: "rio-22",
+    programa: PROGRAMAS.npa,
+    cidade: "Rio de Janeiro",
+    estado: "RJ",
+    numero: "#22",
+    data: "10 de Outubro",
+    diaSemana: "Sabado",
+    endereco: "Rua Correa Dutra, 149 - Flamengo, Rio de Janeiro - RJ",
+    preco: "R$26",
+    turnos: [
+      { label: "Manha", horario: "09h as 13h", esgotada: false },
+      { label: "Tarde", horario: "14h as 18h", esgotada: true },
+    ],
+    linkInscricao: "https://nparj.idmpelobrasil.com.br",
+    status: "em-breve",
+  },
 ];
