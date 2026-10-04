@@ -49,39 +49,6 @@ export type Turma = {
 // linkInscricao segue o padrao de dominio "[cidade].idmpelobrasil.com.br" (confirmar antes de publicar).
 export const turmas: Turma[] = [
   {
-    id: "curitiba-psi-20",
-    programa: PROGRAMAS.psi,
-    cidade: "Curitiba",
-    estado: "PR",
-    numero: "#20",
-    data: "19 de Setembro",
-    diaSemana: "Sabado",
-    endereco: "R. Vereador Washington Luiz, 509 - Jardim Social, Curitiba - PR",
-    preco: "R$37,90",
-    turnos: [
-      { label: "Imersao", horario: "09h as 17h", esgotada: false },
-    ],
-    linkInscricao: "https://psicuritiba.idmpelobrasil.com.br",
-    status: "abertas",
-  },
-  {
-    id: "sjc-21",
-    programa: PROGRAMAS.npa,
-    cidade: "Sao Jose dos Campos",
-    estado: "SP",
-    numero: "#21",
-    data: "26 de Setembro",
-    diaSemana: "Sabado",
-    endereco: "R. Maj. Antonio Domingues, 84 - Centro, Sao Jose dos Campos - SP",
-    preco: "R$20",
-    turnos: [
-      { label: "Manha", horario: "09h as 13h", esgotada: false },
-      { label: "Tarde", horario: "14h as 18h", esgotada: false },
-    ],
-    linkInscricao: "https://sjc.idmpelobrasil.com.br",
-    status: "abertas",
-  },
-  {
     id: "rio-22",
     programa: PROGRAMAS.npa,
     cidade: "Rio de Janeiro",

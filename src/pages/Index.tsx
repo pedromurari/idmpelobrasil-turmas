@@ -39,7 +39,13 @@ const Index = () => {
       </section>
 
       <section className="relative z-10 px-[15px] pb-10">
-        <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
+        <div
+          className={
+            turmas.length === 1
+              ? "max-w-md mx-auto grid gap-6"
+              : "max-w-4xl mx-auto grid gap-6 md:grid-cols-2"
+          }
+        >
           {turmas.map((turma) => (
             <a
               key={turma.id}
