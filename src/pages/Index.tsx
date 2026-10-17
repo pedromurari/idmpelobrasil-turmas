@@ -26,14 +26,14 @@ const Index = () => {
           <h1 className="hero-headline">
             <span className="headline-line">IDM Pelo Brasil</span>
             <span className="headline-line highlight">
-              Turmas Disponiveis
+              {turmas.length === 0 ? "Novas Turmas em Breve" : "Turmas Disponiveis"}
             </span>
           </h1>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
-            Experiencias presenciais de autoconhecimento pelo Brasil —
-            Numerologia, PNL e Psicanalise. Escolha a cidade e a data mais
-            proxima de voce.
+            {turmas.length === 0
+              ? "No momento nao ha turmas presenciais abertas. Deixe seu contato abaixo e avisamos assim que uma nova turma for programada."
+              : "Experiencias presenciais de autoconhecimento pelo Brasil — Numerologia, PNL e Psicanalise. Escolha a cidade e a data mais proxima de voce."}
           </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ const Index = () => {
       <section className="relative z-10 px-[15px] pb-10">
         <div
           className={
-            turmas.length === 1
+            turmas.length <= 1
               ? "max-w-md mx-auto grid gap-6"
               : "max-w-4xl mx-auto grid gap-6 md:grid-cols-2"
           }

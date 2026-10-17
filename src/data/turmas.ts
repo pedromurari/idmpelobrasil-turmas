@@ -47,22 +47,5 @@ export type Turma = {
 
 // Atualize esta lista sempre que uma nova turma do IDM Pelo Brasil for programada.
 // linkInscricao segue o padrao de dominio "[cidade].idmpelobrasil.com.br" (confirmar antes de publicar).
-export const turmas: Turma[] = [
-  {
-    id: "rio-22",
-    programa: PROGRAMAS.npa,
-    cidade: "Rio de Janeiro",
-    estado: "RJ",
-    numero: "#22",
-    data: "10 de Outubro",
-    diaSemana: "Sabado",
-    endereco: "Rua Correa Dutra, 149 - Flamengo, Rio de Janeiro - RJ",
-    preco: "R$26",
-    turnos: [
-      { label: "Manha", horario: "09h as 13h", esgotada: false },
-      { label: "Tarde", horario: "14h as 18h", esgotada: true },
-    ],
-    linkInscricao: "https://nparj.idmpelobrasil.com.br",
-    status: "abertas",
-  },
-];
+// No momento nao ha turmas presenciais previstas (foco em projetos online).
+export const turmas: Turma[] = [];
