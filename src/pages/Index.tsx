@@ -38,7 +38,7 @@ const Index = () => {
           </h1>
           <p className="fds-lead" style={{ marginTop: 22, maxWidth: 620 }}>
             {temTurmas
-              ? "Um dia presencial com Rodrygo Murari, com o seu mapa numerológico pronto e certificado na mão no fim. Duas turmas por cidade: manhã ou tarde."
+              ? "Vivências presenciais com o IDM na sua cidade: Numerologia, Psicanálise, PNL e as outras atividades do Instituto, com certificado na mão no fim."
               : "No momento não há turmas presenciais abertas. Deixe seu contato abaixo e avisamos assim que uma nova turma for programada."}
           </p>
           {temTurmas && (
@@ -87,7 +87,7 @@ const Index = () => {
                       ))}
                     </div>
                     <p className="fds-small" style={{ marginTop: 16 }}>
-                      Com Rodrygo Murari · ingresso <span style={{ color: "var(--ink)", fontWeight: 600 }}>{t.preco}</span>
+                      Ingresso <span style={{ color: "var(--ink)", fontWeight: 600 }}>{t.preco}</span>
                     </p>
                   </div>
 
@@ -111,7 +111,7 @@ const Index = () => {
       {/* ── RODAPÉ ───────────────────────────────────── */}
       <footer style={{ paddingBlock: 40 }}>
         <div className="fds-wrap" style={{ display: "flex", flexWrap: "wrap", gap: 20, alignItems: "center", justifyContent: "space-between" }}>
-          <p className="fds-small">Instituto Despertamente · Rodrygo Murari</p>
+          <p className="fds-small">IDM · Instituto Despertamente</p>
           <div className="fds-small" style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
             <a href="https://www.instagram.com/institutodespertamente/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink-2)" }}>Instagram</a>
             <a href="https://www.youtube.com/@institutodespertamente" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink-2)" }}>YouTube</a>
