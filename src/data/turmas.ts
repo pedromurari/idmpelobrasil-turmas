@@ -15,17 +15,17 @@ export type Programa = {
 export const PROGRAMAS: Record<string, Programa> = {
   npa: {
     sigla: "NPA",
-    nome: "Numerologia Pitagorica",
+    nome: "Numerologia Pitagórica",
     formato: "Presencial - 4h",
   },
   pnl: {
     sigla: "PNL",
-    nome: "Programacao Neurolinguistica",
+    nome: "Programação Neurolinguística",
     formato: "Presencial - 4h",
   },
   psi: {
     sigla: "PSI",
-    nome: "Psicanalise Integrativa",
+    nome: "Psicanálise Integrativa",
     formato: "Presencial - 8h",
   },
 };
@@ -46,6 +46,41 @@ export type Turma = {
 };
 
 // Atualize esta lista sempre que uma nova turma do IDM Pelo Brasil for programada.
-// linkInscricao segue o padrao de dominio "[cidade].idmpelobrasil.com.br" (confirmar antes de publicar).
-// No momento nao ha turmas presenciais previstas (foco em projetos online).
-export const turmas: Turma[] = [];
+// linkInscricao aponta pra página da turma no CRM (www.idmpelobrasil.com.br/npa/<slug>),
+// a mesma que o site institucional usa. Dados batem com npa_eventos.
+export const turmas: Turma[] = [
+  {
+    id: "npa-24-sao-paulo",
+    programa: PROGRAMAS.npa,
+    cidade: "São Paulo",
+    estado: "SP",
+    numero: "#24",
+    data: "05/12",
+    diaSemana: "sábado",
+    endereco: "Rua Oscar Freire, 2617 cj 408 - Pinheiros, São Paulo - SP",
+    preco: "R$ 29",
+    turnos: [
+      { label: "Manhã", horario: "09h às 13h", esgotada: false },
+      { label: "Tarde", horario: "14h às 18h", esgotada: false },
+    ],
+    linkInscricao: "https://www.idmpelobrasil.com.br/npa/sao-paulo",
+    status: "abertas",
+  },
+  {
+    id: "npa-25-santos",
+    programa: PROGRAMAS.npa,
+    cidade: "Santos",
+    estado: "SP",
+    numero: "#25",
+    data: "12/12",
+    diaSemana: "sábado",
+    endereco: "Av. Anna Costa, 61 - Gonzaga, Santos - SP",
+    preco: "R$ 29",
+    turnos: [
+      { label: "Manhã", horario: "09h às 13h", esgotada: false },
+      { label: "Tarde", horario: "14h às 18h", esgotada: false },
+    ],
+    linkInscricao: "https://www.idmpelobrasil.com.br/npa/santos",
+    status: "abertas",
+  },
+];

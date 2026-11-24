@@ -1,0 +1,58 @@
+/*
+ * Design system do site institucional (apps/membros/src/app/design-system.css
+ * no repo onze-digital-main): serif editorial, dourado só como destaque,
+ * plano, separação por linha de 1px. Tokens copiados de lá.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+.fds {
+  --bg: #08090d; --surface: #0c0e14; --deep: #09122c;
+  --ink: #f2f2f3; --ink-2: #a7a8ae; --ink-3: #71737c; --ink-4: #4a4c55;
+  --line: rgba(255, 255, 255, 0.09); --accent: #ffb800; --accent-ink: #09122c;
+  --serif: 'Fraunces', Georgia, serif; --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --mono: ui-monospace, 'SF Mono', Menlo, monospace;
+  background: var(--bg); color: var(--ink); font-family: var(--sans); min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.fds-wrap { max-width: 1200px; margin: 0 auto; padding-inline: 24px; }
+.fds-narrow { max-width: 760px; margin: 0 auto; padding-inline: 24px; }
+.fds-section { padding-block: 96px; }
+.fds-band { background: var(--surface); border-block: 1px solid var(--line); }
+.fds-deep { background: var(--deep); }
+
+.fds-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.fds-meta { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.fds-display { font-family: var(--serif); font-weight: 600; font-size: clamp(2.6rem, 6.5vw, 4.75rem); line-height: 1.02; letter-spacing: -.02em; }
+.fds-h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.08; letter-spacing: -.015em; }
+.fds-h3 { font-family: var(--serif); font-weight: 600; font-size: 2rem; line-height: 1.1; }
+.fds-lead { font-size: 1.125rem; line-height: 1.65; color: var(--ink-2); }
+.fds-body { font-size: 1rem; line-height: 1.7; color: var(--ink-2); }
+.fds-small { font-size: .875rem; line-height: 1.6; color: var(--ink-3); }
+.fds-accent { color: var(--accent); }
+
+.fds-card { border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,.015); padding: 32px; }
+.fds-card--destaque { border-color: var(--accent); background: var(--deep); }
+.fds-tag { border: 1px solid var(--line); border-radius: 4px; padding: 7px 13px; font-size: .875rem; color: var(--ink-2); }
+
+.fds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+  font-weight: 600; font-size: 1rem; padding: 16px 24px; border-radius: 4px; border: 1px solid transparent;
+  cursor: pointer; transition: opacity .2s, border-color .2s; text-decoration: none; }
+.fds-btn--primary { background: var(--accent); color: var(--accent-ink); }
+.fds-btn--primary:hover { opacity: .92; }
+.fds-btn--primary:disabled { opacity: .6; cursor: wait; }
+.fds-btn--ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.fds-btn--ghost:hover { border-color: rgba(255,255,255,.22); }
+
+.fds-input { width: 100%; height: 52px; background: transparent; border: 1px solid var(--line); border-radius: 4px;
+  color: var(--ink); padding: 0 16px; font-size: 1rem; outline: none; transition: border-color .2s; }
+.fds-input::placeholder { color: var(--ink-4); }
+.fds-input:focus { border-color: var(--accent); }
+.fds-label { display: block; font-size: .875rem; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+
+.fds-grid-turmas { display: grid; gap: 20px; }
+@media (min-width: 900px) { .fds-grid-turmas { grid-template-columns: repeat(2, 1fr); } }
+
+@media (max-width: 640px) {
+  .fds-section { padding-block: 56px; }
+  .fds-card { padding: 24px; }
+}

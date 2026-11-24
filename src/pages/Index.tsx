@@ -1,177 +1,122 @@
-import { MapPin, Calendar, Clock, CheckCircle2, Instagram, Youtube, Facebook } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ArrowRight, MapPin } from "lucide-react";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { turmas } from "@/data/turmas";
 import logo from "@/assets/despertamente-simbolo-branco.png";
+import "@/fds.css";
 
+// Página no design system do site institucional (www.idmpsi.com.br).
 const Index = () => {
+  const temTurmas = turmas.length > 0;
+
   return (
-    <div className="min-h-screen relative">
-      <div className="geometric-numbers" aria-hidden="true">
-        <div className="number-float">1</div>
-        <div className="number-float">2</div>
-        <div className="number-float">3</div>
-        <div className="number-float">4</div>
-        <div className="number-float">5</div>
-        <div className="number-float">6</div>
-        <div className="number-float">7</div>
-        <div className="number-float">8</div>
-        <div className="number-float">9</div>
-      </div>
-
-      <section className="relative z-10 px-[15px] py-10 md:py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <img alt="Instituto DespertaMente" className="hub-logo" src={logo} />
-
-          <h1 className="hero-headline">
-            <span className="headline-line">IDM Pelo Brasil</span>
-            <span className="headline-line highlight">
-              {turmas.length === 0 ? "Novas Turmas em Breve" : "Turmas Disponiveis"}
+    <div className="fds">
+      {/* ── TOPO ─────────────────────────────────────── */}
+      <header className="fds-deep" style={{ borderBottom: "1px solid var(--line)" }}>
+        <div className="fds-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, paddingBlock: 16 }}>
+          <a href="https://www.idmpsi.com.br" style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--ink)", textDecoration: "none" }}>
+            <img src={logo} alt="" style={{ height: 34, width: "auto" }} />
+            <span style={{ fontFamily: "var(--serif)", fontWeight: 600 }}>
+              Instituto <span className="fds-accent">Despertamente</span>
             </span>
+          </a>
+          <a href="https://www.idmpsi.com.br/programas/idm-pelo-brasil" className="fds-small" style={{ color: "var(--ink-2)", textDecoration: "none" }}>
+            Sobre o IDM pelo Brasil
+          </a>
+        </div>
+      </header>
+
+      {/* ── ABERTURA ─────────────────────────────────── */}
+      <section className="fds-deep" style={{ paddingBlock: "clamp(56px, 9vw, 112px)" }}>
+        <div className="fds-wrap">
+          <p className="fds-eyebrow">IDM pelo Brasil · Turmas presenciais</p>
+          <h1 className="fds-display" style={{ marginTop: 18, maxWidth: 900 }}>
+            {temTurmas ? (
+              <>Escolha a sua cidade <span className="fds-accent">e a sua turma</span>.</>
+            ) : (
+              <>Novas turmas <span className="fds-accent">em breve</span>.</>
+            )}
           </h1>
-
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
-            {turmas.length === 0
-              ? "No momento nao ha turmas presenciais abertas. Deixe seu contato abaixo e avisamos assim que uma nova turma for programada."
-              : "Experiencias presenciais de autoconhecimento pelo Brasil — Numerologia, PNL e Psicanalise. Escolha a cidade e a data mais proxima de voce."}
+          <p className="fds-lead" style={{ marginTop: 22, maxWidth: 620 }}>
+            {temTurmas
+              ? "Um dia presencial com Rodrygo Murari, com o seu mapa numerológico pronto e certificado na mão no fim. Duas turmas por cidade: manhã ou tarde."
+              : "No momento não há turmas presenciais abertas. Deixe seu contato abaixo e avisamos assim que uma nova turma for programada."}
           </p>
-        </div>
-      </section>
-
-      <section className="relative z-10 px-[15px] pb-10">
-        <div
-          className={
-            turmas.length <= 1
-              ? "max-w-md mx-auto grid gap-6"
-              : "max-w-4xl mx-auto grid gap-6 md:grid-cols-2"
-          }
-        >
-          {turmas.map((turma) => (
-            <a
-              key={turma.id}
-              href={turma.linkInscricao}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="section-container hover-lift block text-left no-underline"
-            >
-              <div className="flex items-start justify-between gap-3 mb-4">
-                <div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground bg-card/80 border border-border rounded-full px-2.5 py-1">
-                    {turma.programa.sigla} {turma.numero} &middot;{" "}
-                    {turma.programa.nome} &middot; {turma.programa.formato}
-                  </span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-2">
-                    {turma.cidade} - {turma.estado}
-                  </h2>
-                </div>
-                <Badge
-                  className={
-                    turma.status === "abertas"
-                      ? "bg-primary text-primary-foreground shrink-0"
-                      : turma.status === "em-breve"
-                      ? "bg-amber-100 text-amber-700 shrink-0"
-                      : "bg-muted text-muted-foreground shrink-0"
-                  }
-                >
-                  {turma.status === "abertas"
-                    ? "Vagas abertas"
-                    : turma.status === "em-breve"
-                    ? "Em breve"
-                    : "Esgotada"}
-                </Badge>
-              </div>
-
-              <div className="space-y-2 text-muted-foreground mb-4">
-                <p className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-primary shrink-0" />
-                  {turma.data} ({turma.diaSemana})
-                </p>
-                <p className="flex items-start gap-2">
-                  <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                  {turma.endereco}
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {turma.turnos.map((turno) => (
-                  <span
-                    key={turno.label}
-                    className="flex items-center gap-1 text-sm bg-card/80 border border-border rounded-full px-3 py-1"
-                  >
-                    <Clock className="h-3.5 w-3.5 text-primary" />
-                    {turno.label}: {turno.horario}
-                    {turno.esgotada && (
-                      <span className="text-destructive font-semibold ml-1">
-                        (esgotada)
-                      </span>
-                    )}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex items-center justify-between pt-4 border-t border-border">
-                <p className="price-shine text-xl font-bold">
-                  A partir de {turma.preco}
-                </p>
-                <span className="text-primary font-semibold text-sm">
-                  Garantir minha vaga &rarr;
-                </span>
-              </div>
+          {temTurmas && (
+            <a href="#turmas" className="fds-btn fds-btn--primary" style={{ width: "auto", marginTop: 32 }}>
+              Ver as datas <ArrowRight size={16} />
             </a>
-          ))}
-
-          <div className="section-container flex flex-col items-center justify-center text-center gap-2 border-dashed">
-            <CheckCircle2 className="h-8 w-8 text-primary" />
-            <p className="font-semibold text-foreground">
-              Novas cidades em breve
-            </p>
-            <p className="text-muted-foreground text-sm">
-              Siga o Instituto DespertaMente no Instagram para ser avisado
-              assim que uma turma abrir na sua regiao.
-            </p>
-          </div>
+          )}
         </div>
       </section>
 
-      <section className="relative z-10 px-[15px] pb-16">
-        <div className="max-w-4xl mx-auto">
+      {/* ── TURMAS ───────────────────────────────────── */}
+      {temTurmas && (
+        <section id="turmas" className="fds-section">
+          <div className="fds-wrap">
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "end", justifyContent: "space-between", gap: 12 }}>
+              <h2 className="fds-h2">Próximas cidades</h2>
+              <p className="fds-small">Vagas limitadas pelo tamanho da sala. Quando lota, lotou.</p>
+            </div>
+
+            <div className="fds-grid-turmas" style={{ marginTop: 40 }}>
+              {turmas.map((t, i) => (
+                <article key={t.id} className={`fds-card ${i === 0 ? "fds-card--destaque" : ""}`} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                  <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16 }}>
+                    <div>
+                      <p className="fds-eyebrow">
+                        {i === 0 ? "Próxima" : "Em seguida"} · {t.programa.sigla} {t.numero}
+                      </p>
+                      <h3 className="fds-h3" style={{ marginTop: 8 }}>{t.cidade}</h3>
+                      <p className="fds-small" style={{ marginTop: 4 }}>{t.programa.nome}</p>
+                    </div>
+                    <div style={{ textAlign: "right" }}>
+                      <p style={{ fontFamily: "var(--serif)", fontWeight: 600, fontSize: 34, lineHeight: 1, color: "var(--accent)" }}>{t.data}</p>
+                      <p className="fds-small" style={{ marginTop: 4 }}>{t.diaSemana}</p>
+                    </div>
+                  </div>
+
+                  <div style={{ borderTop: "1px solid var(--line)", paddingTop: 20 }}>
+                    <p className="fds-body" style={{ display: "flex", gap: 8, alignItems: "flex-start", color: "#d4d5d9" }}>
+                      <MapPin size={16} style={{ marginTop: 4, flexShrink: 0, color: "var(--ink-3)" }} /> {t.endereco}
+                    </p>
+                    <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap", gap: 8 }}>
+                      {t.turnos.map((turno) => (
+                        <span key={turno.label} className="fds-tag" style={turno.esgotada ? { textDecoration: "line-through", color: "var(--ink-4)" } : undefined}>
+                          {turno.label} · {turno.horario}{turno.esgotada ? " · esgotada" : ""}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="fds-small" style={{ marginTop: 16 }}>
+                      Com Rodrygo Murari · ingresso <span style={{ color: "var(--ink)", fontWeight: 600 }}>{t.preco}</span>
+                    </p>
+                  </div>
+
+                  <a href={t.linkInscricao} className={`fds-btn ${i === 0 ? "fds-btn--primary" : "fds-btn--ghost"}`} style={{ marginTop: "auto" }}>
+                    {t.status === "esgotada" ? "Turma esgotada" : "Garantir meu lugar"} <ArrowRight size={16} />
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── LISTA DE ESPERA ──────────────────────────── */}
+      <section className="fds-section fds-band">
+        <div className="fds-narrow">
           <WaitlistForm />
         </div>
       </section>
 
-      <footer className="relative z-10 px-[15px] pb-10 text-center">
-        <div className="max-w-4xl mx-auto border-t border-border pt-6">
-          <p className="text-muted-foreground text-sm mb-4">
-            Instituto DespertaMente - Rodrygo Murari
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a
-              href="https://www.instagram.com/institutodespertamente/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary font-semibold text-sm"
-            >
-              <Instagram className="h-4 w-4" />
-              @institutodespertamente
-            </a>
-            <a
-              href="https://www.youtube.com/@institutodespertamente"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary font-semibold text-sm"
-            >
-              <Youtube className="h-4 w-4" />
-              YouTube &middot; +7 mil inscritos
-            </a>
-            <a
-              href="https://www.facebook.com/institutodespertamente"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary font-semibold text-sm"
-            >
-              <Facebook className="h-4 w-4" />
-              Facebook
-            </a>
+      {/* ── RODAPÉ ───────────────────────────────────── */}
+      <footer style={{ paddingBlock: 40 }}>
+        <div className="fds-wrap" style={{ display: "flex", flexWrap: "wrap", gap: 20, alignItems: "center", justifyContent: "space-between" }}>
+          <p className="fds-small">Instituto Despertamente · Rodrygo Murari</p>
+          <div className="fds-small" style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+            <a href="https://www.instagram.com/institutodespertamente/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink-2)" }}>Instagram</a>
+            <a href="https://www.youtube.com/@institutodespertamente" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink-2)" }}>YouTube</a>
+            <a href="https://www.facebook.com/institutodespertamente" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink-2)" }}>Facebook</a>
+            <a href="https://www.idmpsi.com.br" style={{ color: "var(--ink-2)" }}>idmpsi.com.br</a>
           </div>
         </div>
       </footer>

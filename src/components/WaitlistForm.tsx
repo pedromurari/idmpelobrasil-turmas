@@ -1,7 +1,4 @@
 import { useState, FormEvent } from "react";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { Loader2, CheckCircle2 } from "lucide-react";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
@@ -62,81 +59,48 @@ export const WaitlistForm = () => {
 
   if (enviado) {
     return (
-      <div className="section-container flex flex-col items-center text-center gap-2 py-8">
-        <CheckCircle2 className="h-8 w-8 text-primary" />
-        <p className="font-semibold text-foreground">Cadastro recebido!</p>
-        <p className="text-muted-foreground text-sm">
-          Assim que o IDM Pelo Brasil chegar em {cidade}, avisamos voce por
-          WhatsApp.
+      <div style={{ textAlign: "center" }}>
+        <CheckCircle2 size={32} style={{ color: "var(--accent)", margin: "0 auto" }} />
+        <h2 className="fds-h2" style={{ marginTop: 16 }}>Cadastro recebido.</h2>
+        <p className="fds-body" style={{ marginTop: 12 }}>
+          Assim que o IDM pelo Brasil chegar em {cidade}, a gente te avisa pelo WhatsApp.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="section-container">
-      <h2 className="text-xl md:text-2xl font-bold text-center text-foreground mb-1">
-        Sua cidade ainda nao tem turma?
+    <form onSubmit={handleSubmit}>
+      <p className="fds-eyebrow">Lista de espera</p>
+      <h2 className="fds-h2" style={{ marginTop: 14 }}>
+        Sua cidade ainda <span className="fds-accent">não tem turma</span>?
       </h2>
-      <p className="text-center text-muted-foreground text-sm mb-6">
-        Deixe seu contato e avisamos assim que o IDM Pelo Brasil chegar ai.
+      <p className="fds-body" style={{ marginTop: 14 }}>
+        Deixe seu contato e avisamos assim que o IDM pelo Brasil chegar aí.
       </p>
 
-      <div className="grid gap-4 max-w-md mx-auto">
-        <div className="grid gap-1.5">
-          <Label htmlFor="nome">Nome</Label>
-          <Input
-            id="nome"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-            placeholder="Seu nome"
-            maxLength={80}
-            required
-          />
+      <div style={{ marginTop: 32, display: "grid", gap: 18 }}>
+        <div>
+          <label htmlFor="nome" className="fds-label">Nome</label>
+          <input id="nome" className="fds-input" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Seu nome" maxLength={80} required />
         </div>
-        <div className="grid gap-1.5">
-          <Label htmlFor="whatsapp">WhatsApp</Label>
-          <Input
-            id="whatsapp"
-            value={whatsapp}
-            onChange={(e) => setWhatsapp(formatWhatsapp(e.target.value))}
-            placeholder="(00) 00000-0000"
-            inputMode="tel"
-            maxLength={15}
-            required
-          />
+        <div style={{ display: "grid", gap: 18, gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
+          <div>
+            <label htmlFor="whatsapp" className="fds-label">WhatsApp</label>
+            <input id="whatsapp" className="fds-input" value={whatsapp} onChange={(e) => setWhatsapp(formatWhatsapp(e.target.value))} placeholder="(11) 90000-0000" inputMode="tel" maxLength={15} required />
+          </div>
+          <div>
+            <label htmlFor="cidade" className="fds-label">Cidade</label>
+            <input id="cidade" className="fds-input" value={cidade} onChange={(e) => setCidade(e.target.value)} placeholder="Sua cidade" maxLength={60} required />
+          </div>
         </div>
-        <div className="grid gap-1.5">
-          <Label htmlFor="email">E-mail</Label>
-          <Input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="seu@email.com"
-            maxLength={120}
-            required
-          />
+        <div>
+          <label htmlFor="email" className="fds-label">E-mail</label>
+          <input id="email" type="email" className="fds-input" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="seu@email.com" maxLength={120} required />
         </div>
-        <div className="grid gap-1.5">
-          <Label htmlFor="cidade">Cidade</Label>
-          <Input
-            id="cidade"
-            value={cidade}
-            onChange={(e) => setCidade(e.target.value)}
-            placeholder="Sua cidade"
-            maxLength={60}
-            required
-          />
-        </div>
-
-        <Button type="submit" disabled={isLoading} className="mt-2">
-          {isLoading ? (
-            <Loader2 className="h-4 w-4 animate-spin" />
-          ) : (
-            "Quero ser avisado"
-          )}
-        </Button>
+        <button type="submit" disabled={isLoading} className="fds-btn fds-btn--primary" style={{ marginTop: 6 }}>
+          {isLoading ? <Loader2 size={16} className="animate-spin" /> : "Quero ser avisado"}
+        </button>
       </div>
     </form>
   );
